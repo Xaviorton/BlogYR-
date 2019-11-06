@@ -10,7 +10,7 @@ namespace Blog.Models
 
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-        public ICollection<Article> Products { get; set; }
+        public ICollection<Article> Articles { get; set; }
 
         public Category(string categoryName)
         {
@@ -18,7 +18,7 @@ namespace Blog.Models
         }
         public Category()
         {
-            Products = new List<Article>();
+            Articles = new List<Article>();
         }
     }
 }

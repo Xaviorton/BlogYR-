@@ -18,7 +18,7 @@
 
                             @foreach (var s in ViewBag.Categories)
                             {
-                                <li><a href="/Category/Category/@s.CategoryId">@s.CN</a></li>
+                                <li><a href="/Category/Category/@s.CategoryId">@s.CategoryName</a></li>
                             }
 
                         </ul>
@@ -27,14 +27,14 @@
 </div>
 <div class="content">
 <div class="posts">
-<ul class="products clearfix">
+<ul class="Articles clearfix">
                 @foreach (var b in Model)
                 {
                     <li class="product-wrapper">
                         <div class="product">
                             <img src="@Html.DisplayFor(modelItem=>b.path)" style="width:100%;height:150px;" />
                             @Html.DisplayFor(modelItem => b.Title)
-                            @Html.DisplayFor(modelItem => b.discription )
+                            @Html.DisplayFor(modelItem => b.Discription )
                             <br>
                             <a href="/More/More/@b.Id" class="button">Детальніше</a>
 

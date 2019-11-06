@@ -23,8 +23,8 @@ namespace Blog.Controllers
             ViewBag.Id = id;
             var categories = context.Categories;
             ViewBag.Categories = categories;
-            var products = context.Articles.Include(c => c.CN);
-            ViewBag.Articles = products;
+            var Articles = context.Articles.Include(c => c.CN);
+            ViewBag.Articles = Articles;
 
 
 
@@ -33,7 +33,7 @@ namespace Blog.Controllers
             {
                 return HttpNotFound();
             }
-            Category category = context.Categories.Include(t => t.Products).FirstOrDefault(t => t.CategoryId == id);
+            Category category = context.Categories.Include(t => t.Articles).FirstOrDefault(t => t.CategoryId == id);
             if (category == null)
             {
                 return HttpNotFound();

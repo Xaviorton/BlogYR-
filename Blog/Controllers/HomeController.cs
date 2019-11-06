@@ -14,10 +14,10 @@ namespace Blog.Controllers
         ApplicationDbContext context = new ApplicationDbContext();
         public ActionResult Index(int? page)
         {
-            //   IEnumerable<Product> products = db.Products;
+            //   IEnumerable<Product> Articles = db.Articles;
           
             //     IEnumerable<Category> categories = db.Categories;
-            //    ViewBag.Products = products;
+            //    ViewBag.Articles = Articles;
    
             var categories = context.Categories;
             ViewBag.Categories = categories;
