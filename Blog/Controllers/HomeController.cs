@@ -3,14 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Data.Entity;
+using PagedList.Mvc;
+using PagedList;
+using Blog.Models;
 namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        ApplicationDbContext context = new ApplicationDbContext();
+        public ActionResult Index(int? page)
         {
-            return View();
+            //   IEnumerable<Product> products = db.Products;
+          
+            //     IEnumerable<Category> categories = db.Categories;
+            //    ViewBag.Products = products;
+   
+            var categories = context.Categories;
+            ViewBag.Categories = categories;
+
+            //     ViewBag.Categories = categories;
+            var prod = context.Articles.Include(c => c.CN);
+            var pr = prod.ToList();
+            int pageSize = 6;
+
+            int pageNumber = (page ?? 1);
+            return View(pr.ToPagedList(pageNumber, pageSize));
+        //    return View();
         }
 
         public ActionResult About()

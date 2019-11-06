@@ -20,6 +20,8 @@ namespace Blog.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
