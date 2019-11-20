@@ -25,7 +25,7 @@ namespace Blog.Controllers
             //     ViewBag.Categories = categories;
             var prod = context.Articles.Include(c => c.CN);
             var pr = prod.ToList();
-            int pageSize = 6;
+            int pageSize = 1;
 
             int pageNumber = (page ?? 1);
             return View(pr.ToPagedList(pageNumber, pageSize));

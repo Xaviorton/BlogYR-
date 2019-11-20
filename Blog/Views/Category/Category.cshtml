@@ -1,8 +1,8 @@
-﻿@{
+﻿
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model PagedList.IPagedList<Blog.Models.Article>
-@using PagedList.Mvc;
+@using Blog.Models;
 <!DOCTYPE html>
 
 <html>
@@ -38,26 +38,29 @@
           
             <div class="posts">
                 <ul class="Articles clearfix">
-                    @foreach (var b in Model)
+                    @foreach (var b in ViewBag.Articles)
                     {
+                        if (b.CN.CategoryId == ViewBag.Id)
+
+
+                        {
                         <li class="product-wrapper">
                             <section class="product">
-                                <img src="@Html.DisplayFor(modelItem=>b.path)" style="width:1100px;height:450px;" />
+                                <img src="@b.path" style="width:1100px;height:450px;" />
                                 <br />
-                                @Html.DisplayFor(modelItem => b.Title)
+                               @b.Title
                                 <br />
-                                @Html.DisplayFor(modelItem => b.Discription)
+                               @b.Discription
                                 <br>
-                                <div class="details"><a href="/More/More/@b.Id" class="button">Детальніше</a></div>
-</section>
+                                <div class="details">
+                                    <a>Детальніше</a>
+                                </div>
+                            </section>
                         </li>
-                        
+                        }
 
                     }
-                </ul> Сторінка @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) з @Model.PageCount сторінок життя цього добряка
-
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-
+                </ul>
             </div>
         </div>
     </div>

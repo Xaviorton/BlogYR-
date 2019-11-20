@@ -212,6 +212,14 @@
     <Compile Include="Migrations\201911060828149_DataMigration.Designer.cs">
       <DependentUpon>201911060828149_DataMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911061032419_DataMigration1.cs" />
+    <Compile Include="Migrations\201911061032419_DataMigration1.Designer.cs">
+      <DependentUpon>201911061032419_DataMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911121818166_DataMigration2.cs" />
+    <Compile Include="Migrations\201911121818166_DataMigration2.Designer.cs">
+      <DependentUpon>201911121818166_DataMigration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -226,6 +234,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\indexstyle.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -281,11 +290,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\AddAr\AddAr.cshtml" />
+    <Content Include="Views\Category\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AddAr\" />
-    <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -303,6 +312,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911060828149_DataMigration.resx">
       <DependentUpon>201911060828149_DataMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911061032419_DataMigration1.resx">
+      <DependentUpon>201911061032419_DataMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911121818166_DataMigration2.resx">
+      <DependentUpon>201911121818166_DataMigration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
