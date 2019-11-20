@@ -21,9 +21,12 @@
                 @Html.ActionLink("BlogYR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">                 
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Про блог", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Додати", "AddAr", "AddAr")</li>}
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -31,7 +34,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+      
         
     </div>
 

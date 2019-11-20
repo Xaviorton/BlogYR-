@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Blog.Models;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/indexstyle.css">
+    <title>BlogYR</title>
+</head>
+<body>
+    <form method="get" action="">
+        <div class="wrapper">
+            <div class="header">
+                <h1>@Model.Title</h1>
+            </div>
+            <div class="sidebar">
+                <div class="categories">
+
+                    <h1>Категорії</h1>
+                    <section id="submenu">
+                        <ul>
+
+                            @foreach (var s in ViewBag.Categories)
+                            {
+                                <li><a href="/Category/Category/@s.CategoryId">@s.CategoryName</a></li>
+                            }
+
+                        </ul>
+                    </section>
+                </div>
+
+            </div>
+            <div class="content">
+                <br />
+                <div>
+                    <img style="width:900px;height:350px;" src="@Model.path" />
+                    <br />
+                    <strong>@Model.Discription</strong>
+                    <p>@Model.Text</p>
+                    @Html.ActionLink("Назад", "Index", "Home")
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

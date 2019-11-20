@@ -23,10 +23,10 @@ namespace Blog.Controllers
                 {
                     return HttpNotFound();
                 }
-                Product product = db.Products.Find(id);
-                if (product != null)
+                Article article = db.Articles.Find(id);
+                if (article != null)
                 {
-                    return View(product);
+                    return View(article);
                 }
                 return HttpNotFound();
 
@@ -35,5 +35,4 @@ namespace Blog.Controllers
 
         }
     }
-}
-}
+
