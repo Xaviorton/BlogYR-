@@ -1,0 +1,130 @@
+﻿body {
+    background-color: #FFEA81;
+    width:900px;
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header header header" "nav content content";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.details {
+    border: 1px solid #E0E0E0;
+    color: #fd7a01;
+    display: block;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 5px;
+    text-decoration: none;
+    margin-right:500px;
+}
+
+.content {
+    grid-area: content;
+    height: 100px;
+}
+
+.sidebar {
+    grid-area: nav;
+}
+    .category {
+    margin-left: 15%;
+    background-color: coral;
+    opacity: initial;
+    width: 100px;
+    height: 35px;
+    border: solid;
+}
+
+#submenu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#submenu li {
+    /*   float: left;*/
+    line-height: 1em;
+    list-style: none outside none;
+    margin: 0;
+    position: relative;
+    width: 220px;
+}
+
+    #submenu li a {
+        border: inset;
+        color: #383838;
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 14px;
+        margin: 0 0 0 19px;
+        padding: 9px 18px 11px 24px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+        #submenu li a:hover {
+            color: white;
+        }
+
+.product-wrapper {
+
+   position:relative;
+   display:block;
+
+    width: 100%;
+    float: left;
+    transition: width .2s;
+}
+
+.product {
+    display: block;
+    border: 1px solid #b5e9a7;
+    border-radius: 3px;
+    position: relative;
+    background: #fff;
+    margin: 0 20px 20px 0;
+    text-decoration: none;
+    z-index: 0;
+    height: 300px;
+}
+
+.product {
+    height: 560px;
+    width: 1100px;
+    background-color: lightcyan;
+}
+
+.products {
+    list-style: none;
+    margin: 0 -20px 0 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 450px) {
+    .product-wrapper {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .product-wrapper {
+        width: 33.333%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .product-wrapper {
+        width: 20%;
+    }
+}

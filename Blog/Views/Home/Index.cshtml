@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<Blog.Models.Article>
+@using PagedList.Mvc;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/indexstyle.css">
+    <title>BlogYR</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Блог про подорожі Христофора Колумбуса</h1>
+        </div>
+        <div class="sidebar">
+            <div class="categories">
+
+                <h1>Категорії</h1>
+                <section id="submenu">
+                    <ul>
+
+                        @foreach (var s in ViewBag.Categories)
+                        {
+                            <li><a href="/Category/Category/@s.CategoryId">@s.CategoryName</a></li>
+                        }
+
+                    </ul>
+                </section>
+            </div>
+            
+        </div>
+        <div class="content">
+            <br />
+          
+            <div class="posts">
+                <ul class="Articles clearfix">
+                    @foreach (var b in Model)
+                    {
+                        <li class="product-wrapper">
+                            <section class="product">
+                                <img src="@Html.DisplayFor(modelItem=>b.path)" style="width:1100px;height:450px;" />
+                                <br />
+                                @Html.DisplayFor(modelItem => b.Title)
+                                <br />
+                                @Html.DisplayFor(modelItem => b.Discription)
+                                <br>
+                                <div class="details"><a href="/More/More/@b.Id" class="button">Детальніше</a></div>
+</section>
+                        </li>
+                        
+
+                    }
+                </ul> Сторінка @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) з @Model.PageCount сторінок життя цього добряка
+
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
