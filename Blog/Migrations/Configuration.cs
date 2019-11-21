@@ -30,7 +30,7 @@ namespace Blog.Migrations {
 
             // создаем пользователей
             var admin = new ApplicationUser { Email = "somemail@mail.ru", UserName = "admin" };
-            string password = "Qw1_2qwer";
+            string password = "admin";
             var result = userManager.Create(admin, password);
 
             // если создание пользователя прошло успешно
@@ -42,17 +42,16 @@ namespace Blog.Migrations {
             }
 
 
-          /*  Category c = new Category("Подорожі");
+            Category c = new Category("Подорожі");
 
             Category c2 = new Category("Їжа");
             Category c3 = new Category("Традиції");
             Category c4 = new Category("Народні Танці");
-            context.Categories.Add(c2);
-            context.Categories.Add(c3);
-            context.Categories.Add(c4);
+       
+
             context.Articles.Add(new Article { path = "https://ukrmandry.com.ua/images/5395-2.jpg", Title = "Жмеринка", Discription = "Жмеринка — місто обласного значення у Вінницькій області", Text= "Свою назву Жмеринка отримала від сіл розташованих по обидві сторони від залізничної колії — Велика і Мала Жмеринка. Щодо походження назви, то існують різні версії: одні дослідники вважають, що вона походить від польського вислову «жму руку» (пол. «жме ренке»), сказаному при зустрічі двох переможців, інші вбачають її в тому, що на території сучасного міста було поселення, в якому жили гончарі, які з глини виготовляли різний посуд — «жали ринки». Інші дослідники шукали витоки значно глибше в історії краю, вважаючи походження назви від кореня «жмир», що означає самоназву кіммерійців, племен, які населяли цю землю до скіфського періоду. Є гіпотеза, що «джемері» — це густий темний ліс, хащі, на місці якого виникли ці поселення. Та найбільш ймовірною є наступна. Давньогрецький історик Геродот свідчить, що подільська земля відома світові ще за 5 сторіч до н. е.. Він згадує алозонів і неврів, які заселяли ці землі. З його праць ми дізнаємось, що південь України в ті далекі часи населяли кіммерійці, яких ассирійці називали «GIM(M)IR»(«ГІММІР»). В українській мові (як і в інших слов'янських мовах) звук «ж» чергується із звуком «г». Можливо звідси і пішла назва наших далеких предків. Вона збереглася у назвах подільських поселень Чемеринці, Чемер, Чемериси, в назві трави чемериці, одежі-чемерки, а згодом і назві поселення — Жмеринка.", CN = c });
             base.Seed(context);
-           */ //  This method will be called after migrating to the latest version.
+            //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
