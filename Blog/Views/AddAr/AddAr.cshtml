@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Додати пост";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @model Blog.Models.Article
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/indexstyle.css">
+    <title>BlogYR</title>
+</head>
+<body>
+    <div style="text-align:center; margin-left:22%;">
+        <h3 style="text-align:center;">Додати пост</h3>
+        <form  method="post" action="">
+            <input type="hidden" value="@ViewBag.Id" name="Id" />
+            <table>
+                <tr>
+                    <td><p>Введіть шлях до файлу картинки: </p></td>
+                    <td><input type="text" name="path" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть заголовок:</p></td>
+                    <td>
+                        <input type="text" name="Title">
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть опис:</p></td>
+                    <td>
+                        <input type="text" name="Discription">
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть текст:</p></td>
+                    <td>
+                        <textarea rows="10" cols="45" name="Text"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Виберіть категорію:</p></td>
+                    <td>
+                        @Html.DropDownListFor(model => model.CategoryId, ViewBag.Category as SelectList)
+                    </td>
+                </tr>
+                <tr><td><input type="submit" value="Додати" style="margin-left:100%;"/> </td><td></td></tr>
+    </divstyle="text-align:center;">
+</body>
+</html>
